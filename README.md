@@ -65,10 +65,6 @@ export const prerender = true;
 
 Verify your setup with `npm run build`, which should succeed and create a `dist` folder. Also, add `dist` to your `.gitignore`.
 
-# 🤓 Program something
-
-Program your app. Minimal example: https://gist.github.com/bersling/33dd5afe071b3aa6b93a35d42b2afabc .
-
 # ⚡ Set up capacitor
 
 Add capacitor to project, see https://capacitorjs.com/
