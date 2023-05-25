@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-# 📁 Switch to SSG
+# 📁 Switch to SSG (=Static Site Generation)
 
 (1) Install the static adapter
 
