@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Capacitor } from '@capacitor/core';
+
 	let emojis = [
 		'😀',
 		'😃',
@@ -122,6 +124,8 @@
 		'💘'
 	];
 
+	let isIos = Capacitor.getPlatform() === 'ios';
+
 	let emojiRows = [
 		['❓', '❓', '❓'],
 		['❓', '❓', '❓'],
@@ -137,12 +141,13 @@
 	<div class="board">
 		{#each emojiRows as emojiRow, row}
 			{#each emojiRow as emoji, col}
-				<button on:click={selectRandomEmoji(row, col)} class="emoji-button">
+				<button on:click={selectRandomEmoji(row, col)} class="emoji-button {isIos ? 'ios' : ''}">
 					{emoji}
 				</button>
 			{/each}
 		{/each}
 	</div>
+	<div>version 6</div>
 </div>
 
 <style>
@@ -151,6 +156,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		flex-direction: column;
 	}
 
 	.board {
@@ -174,6 +180,9 @@
 		height: 95%;
 		font-size: min(20vw, 20vh);
 	}
+	.emoji-button.ios {
+		font-size: 35px;
+	}
 
 	.emoji-button:hover {
 		background: #fbfbfb;
@@ -185,4 +194,3 @@
 		outline: none;
 	}
 </style>
-

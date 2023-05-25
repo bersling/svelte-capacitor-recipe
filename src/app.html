@@ -3,8 +3,36 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover"
+		/>
+
 		%sveltekit.head%
+
+		<style>
+			* {
+				box-sizing: border-box;
+
+				/* disable text selection (svg icons are also text...) */
+				-webkit-user-select: none;
+				/* Safari */
+				-ms-user-select: none;
+				/* IE 10 and IE 11 */
+				user-select: none;
+				/* Standard syntax */
+
+				/* preventing the long press context menu, https://stackoverflow.com/a/56866766/3022127 */
+				-webkit-touch-callout: none !important;
+				-webkit-user-select: none !important;
+
+				/* preventing iOS tap highlight */
+				-webkit-tap-highlight-color: transparent;
+
+				/* Disable browser handling of all panning and zooming gestures, except for regular scrolling */
+				touch-action: pan-y;
+			}
+		</style>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>

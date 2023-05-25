@@ -2,7 +2,6 @@
 
 Small recipe to create a svelte kit app and package it for mobile (ios/android) with capacitor.
 
-
 # Create svelte kit project
 
 See https://kit.svelte.dev/docs/creating-a-project
@@ -145,4 +144,3 @@ In `app.html` add a style tag with the content
 	touch-action: pan-y;
 }
 ```
-
