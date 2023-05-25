@@ -125,26 +125,27 @@ Prevents stuff like zooming in on double click.
 In `app.html` add a style tag with the content
 
 ```
+		<style>
+			* {
+				box-sizing: border-box;
 
-* {
-	box-sizing: border-box;
+				/* disable text selection (svg icons are also text...) */
+				-webkit-user-select: none;
+				/* Safari */
+				-ms-user-select: none;
+				/* IE 10 and IE 11 */
+				user-select: none;
+				/* Standard syntax */
 
-	/* disable text selection (svg icons are also text...) */
-	-webkit-user-select: none;
-	/* Safari */
-	-ms-user-select: none;
-	/* IE 10 and IE 11 */
-	user-select: none;
-	/* Standard syntax */
+				/* preventing the long press context menu, https://stackoverflow.com/a/56866766/3022127 */
+				-webkit-touch-callout: none !important;
+				-webkit-user-select: none !important;
 
-	/* preventing the long press context menu, https://stackoverflow.com/a/56866766/3022127 */
-	-webkit-touch-callout: none !important;
-	-webkit-user-select: none !important;
+				/* preventing iOS tap highlight */
+				-webkit-tap-highlight-color: transparent;
 
-	/* preventing iOS tap highlight */
-	-webkit-tap-highlight-color: transparent;
-
-	/* Disable browser handling of all panning and zooming gestures, except for regular scrolling */
-	touch-action: pan-y;
-}
+				/* Disable browser handling of all panning and zooming gestures, except for regular scrolling */
+				touch-action: pan-y;
+			}
+		</style>
 ```
