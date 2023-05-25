@@ -120,7 +120,7 @@ Change meta tag in `app.html` to
 
 Prevents stuff like zooming in on double click.
 
-## Prevent users from selecting "text"
+## Prevent users from doing unwanted things
 
 In `app.html` add a style tag with the content
 
@@ -149,3 +149,7 @@ In `app.html` add a style tag with the content
 			}
 		</style>
 ```
+
+## Fix App Specific Oddities
+
+In the app from above, on iOS it just looked weird. The font size calculation seems to be off. So here's a version that fixes this on iOS and shows you capacitors `native` feature: https://gist.github.com/bersling/ebe95f7918b3169b3d36b0b13272daf9 .
