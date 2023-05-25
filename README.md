@@ -63,7 +63,7 @@ Verify your setup with `npm run build`, which should succeed and create a `dist`
 
 # 🤓 Program something
 
-Program your app.
+Program your app. Minimal example: https://gist.github.com/bersling/33dd5afe071b3aa6b93a35d42b2afabc .
 
 # ⚡ Set up capacitor
 
