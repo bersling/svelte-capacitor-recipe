@@ -60,7 +60,7 @@ export default config;
 export const prerender = true;
 ```
 
-Verify your setup with `npm run build`, which should succeed and create a `dist` folder.
+Verify your setup with `npm run build`, which should succeed and create a `dist` folder. Also, add `dist` to your `.gitignore`.
 
 # 🤓 Program something
 
