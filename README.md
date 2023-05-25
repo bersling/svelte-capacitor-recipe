@@ -16,6 +16,10 @@ npm install
 npm run dev
 ```
 
+# 🤓 Program something
+
+Program your app. Minimal example: https://gist.github.com/bersling/33dd5afe071b3aa6b93a35d42b2afabc .
+
 # 📁 Switch to SSG (=Static Site Generation)
 
 (1) Install the static adapter
