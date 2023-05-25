@@ -83,7 +83,9 @@ First, run
 npx cap add android
 ```
 
-To run and build the android version, install Android Studio and open the android folder.
+Every time you make code changes, you then run `npm run build & npx cap sync` to sync the changes to the android project. Execute that step now.
+
+Install Android Studio if you haven't and open the project with `npx cap open android`.
 
 #  Set up ios app
 
@@ -98,6 +100,8 @@ Then run
 ```
 npx cap open ios
 ```
+
+Don't forget to run `npm run build & npx cap sync` on code changes.
 
 Select a target device to test, or select build for any device and then hit "archive" to ship.
 
