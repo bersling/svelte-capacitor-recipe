@@ -12,6 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@capacitor/cli": "^5.0.4",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"prettier": "^2.8.0",
@@ -24,6 +25,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@capacitor/android": "^5.0.4",
+		"@capacitor/core": "^5.0.4",
+		"@capacitor/ios": "^5.0.4",
 		"@sveltejs/adapter-static": "^2.0.2"
 	}
 }
