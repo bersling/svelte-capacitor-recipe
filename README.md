@@ -2,7 +2,7 @@
 
 Small recipe to create a svelte kit app and package it for mobile (ios/android) with capacitor.
 
-# Create svelte kit project
+# 🚀 Create svelte kit project
 
 See https://kit.svelte.dev/docs/creating-a-project
 
