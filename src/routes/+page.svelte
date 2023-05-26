@@ -147,7 +147,6 @@
 			{/each}
 		{/each}
 	</div>
-	<div>version 6</div>
 </div>
 
 <style>
