@@ -2,7 +2,7 @@
 
 Small recipe to create a svelte kit app and package it for mobile (ios/android) with capacitor.
 
-# Create svelte kit project
+# 🚀 Create svelte kit project
 
 See https://kit.svelte.dev/docs/creating-a-project
 
@@ -16,7 +16,11 @@ npm install
 npm run dev
 ```
 
-# 📁 Switch to SSG
+# 🤓 Program something
+
+Program your app. Minimal example: https://gist.github.com/bersling/33dd5afe071b3aa6b93a35d42b2afabc .
+
+# 📁 Switch to SSG (=Static Site Generation)
 
 (1) Install the static adapter
 
@@ -61,10 +65,6 @@ export const prerender = true;
 
 Verify your setup with `npm run build`, which should succeed and create a `dist` folder. Also, add `dist` to your `.gitignore`.
 
-# 🤓 Program something
-
-Program your app.
-
 # ⚡ Set up capacitor
 
 Add capacitor to project, see https://capacitorjs.com/
@@ -83,7 +83,9 @@ First, run
 npx cap add android
 ```
 
-To run and build the android version, install Android Studio and open the android folder.
+Every time you make code changes, you then run `npm run build && npx cap sync` to sync the changes to the android project. Execute that step now.
+
+Install Android Studio if you haven't and open the project with `npx cap open android`.
 
 #  Set up ios app
 
@@ -98,6 +100,8 @@ Then run
 ```
 npx cap open ios
 ```
+
+Don't forget to run `npm run build && npx cap sync` on code changes.
 
 Select a target device to test, or select build for any device and then hit "archive" to ship.
 
@@ -116,31 +120,36 @@ Change meta tag in `app.html` to
 
 Prevents stuff like zooming in on double click.
 
-## Prevent users from selecting "text"
+## Prevent users from doing unwanted things
 
 In `app.html` add a style tag with the content
 
 ```
+		<style>
+			* {
+				box-sizing: border-box;
 
-* {
-	box-sizing: border-box;
+				/* disable text selection (svg icons are also text...) */
+				-webkit-user-select: none;
+				/* Safari */
+				-ms-user-select: none;
+				/* IE 10 and IE 11 */
+				user-select: none;
+				/* Standard syntax */
 
-	/* disable text selection (svg icons are also text...) */
-	-webkit-user-select: none;
-	/* Safari */
-	-ms-user-select: none;
-	/* IE 10 and IE 11 */
-	user-select: none;
-	/* Standard syntax */
+				/* preventing the long press context menu, https://stackoverflow.com/a/56866766/3022127 */
+				-webkit-touch-callout: none !important;
+				-webkit-user-select: none !important;
 
-	/* preventing the long press context menu, https://stackoverflow.com/a/56866766/3022127 */
-	-webkit-touch-callout: none !important;
-	-webkit-user-select: none !important;
+				/* preventing iOS tap highlight */
+				-webkit-tap-highlight-color: transparent;
 
-	/* preventing iOS tap highlight */
-	-webkit-tap-highlight-color: transparent;
-
-	/* Disable browser handling of all panning and zooming gestures, except for regular scrolling */
-	touch-action: pan-y;
-}
+				/* Disable browser handling of all panning and zooming gestures, except for regular scrolling */
+				touch-action: pan-y;
+			}
+		</style>
 ```
+
+## Fix App Specific Oddities
+
+In the app from above, on iOS it just looked weird. The font size calculation seems to be off. So here's a version that fixes this on iOS and shows you capacitors `native` feature: https://gist.github.com/bersling/ebe95f7918b3169b3d36b0b13272daf9 .
